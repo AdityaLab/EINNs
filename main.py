@@ -18,9 +18,6 @@ def train_predict(args):
         os.mkdir('./figures')
     if not os.path.exists('./results'):
         os.mkdir('./results') 
-
-    # if version1:
-    #     mod = 
     
     model = EINN(args)
     model.train_predict()
