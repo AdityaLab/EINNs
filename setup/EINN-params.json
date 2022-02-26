@@ -1,0 +1,19 @@
+{
+    "BATCH_SIZE":512,
+    "NUM_EPOCHS":1,
+    "LEARNING_RATE":1e-3,
+    "INIT_ODE":true,
+    "KEEP_TRAINING":true,
+    "LOSS_WEIGHTS":{
+        "data":1,
+        "feat_data":1,
+        "ode":10,
+        "future_ode":1,
+        "monotonicity":10,
+        "ode_param":0.001,
+        "gradient_loss":1,
+        "kd_target":1,
+        "kd_emb":1,
+        "aux":0.1
+    }
+}
