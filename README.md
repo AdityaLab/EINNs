@@ -4,7 +4,7 @@
 
 Implementation of the paper "EINNs: Epidemiologically-Informed Neural Networks."
 
-Authors: Alexander Rodríguez, Jiaming Cui, Bijaya Adhikari, Naren Ramakrishnan, B. Aditya Prakash
+Authors: Alexander Rodríguez, Jiaming Cui, Naren Ramakrishnan, Bijaya Adhikari, B. Aditya Prakash
 
 Pre-print: [https://arxiv.org/abs/2202.10446](https://arxiv.org/abs/2202.10446)
 
