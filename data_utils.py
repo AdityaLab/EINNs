@@ -173,6 +173,9 @@ class SeqData(torch.utils.data.Dataset):
 #           state/national level data 
 ########################################################
 
+''' smooth data with moving average (common with fitting mechanistic models) '''
+def moving_average(x, w):
+    return pd.Series(x).rolling(w, min_periods=1).mean().values
 
 def load_df(region,ew_start_data,ew_end_data,temporal='daily'):
     """ load and clean data"""
@@ -187,12 +190,6 @@ def load_df(region,ew_start_data,ew_end_data,temporal='daily'):
     df = df.fillna(method="ffill")
     df = df.fillna(method="backfill")
     df = df.fillna(0)
-    if SMOOTH_MOVING_WINDOW:
-        def moving_average(x, w):
-            return np.convolve(x, np.ones(w)/w, mode='full')[:-w+1]
-        # smooth
-        # df.loc[:,'positiveIncr'] = moving_average(df.loc[:,'positiveIncr'].values,SMOOTH_WINDOW)
-        df.loc[:,'death_jhu_incidence'] = moving_average(df.loc[:,'death_jhu_incidence'].values,SMOOTH_WINDOW)
     return df
 
 def get_state_train_data(region,pred_week,ew_start_data=EW_START_DATA,temporal='daily'):
@@ -202,8 +199,10 @@ def get_state_train_data(region,pred_week,ew_start_data=EW_START_DATA,temporal='
     pred_week=convert_to_epiweek(pred_week) 
     ew_start_data=convert_to_epiweek(ew_start_data)
     df = load_df(region,ew_start_data,pred_week,temporal)
+    # smooth
+    df.loc[:,'positiveIncr'] = moving_average(df.loc[:,'positiveIncr'].values,SMOOTH_WINDOW)
+    df.loc[:,'death_jhu_incidence'] = moving_average(df.loc[:,'death_jhu_incidence'].values,SMOOTH_WINDOW)
     # select targets
-    # targets = df.loc[:,['positiveIncr','death_jhu_incidence']].values
     targets = df.loc[:,['death_jhu_incidence']].values
     # now subset based on input ew_start_data
     df = df[macro_features]
@@ -215,7 +214,7 @@ def get_state_test_data(region,pred_week,temporal='daily'):
     """
     pred_week=convert_to_epiweek(pred_week)
     # import smoothed dataframe
-    df = load_df(region,pred_week,pred_week+4,temporal)
+    df = load_df(region,pred_week+1,pred_week+8,temporal)
     new_cases = df.loc[:,'positiveIncr'].values
     new_deaths = df.loc[:,'death_jhu_incidence'].values
     return new_cases, new_deaths

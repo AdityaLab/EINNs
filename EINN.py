@@ -828,7 +828,7 @@ class EINN(nn.Module):
         )
         df = pd.DataFrame(data.transpose(),columns=['k_ahead','deaths'])
         df['k_ahead'] = df['k_ahead'].astype('int8')
-        path = './results/{}/'.format(region)
+        path = './results/COVID/{}/'.format(region)
         if not os.path.exists(path):
             os.makedirs(path)
         model_name = 'EINN'+submodule
