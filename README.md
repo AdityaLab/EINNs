@@ -2,7 +2,7 @@
 
 ## Publication
 
-Implementation of the paper "EINNs: Epidemiologically-Informed Neural Networks" published in AAAI 2023.
+Implementation of the paper "EINNs: Epidemiologically-informed Neural Networks" published in AAAI 2023.
 
 Authors: Alexander Rodríguez, Jiaming Cui, Naren Ramakrishnan, Bijaya Adhikari, B. Aditya Prakash
 
@@ -34,7 +34,7 @@ If you have any questions about the code, please contact Alexander Rodriguez at 
 
 ## Cite our work
 If you find our work useful, please cite our work:
-- Alexander Rodríguez, Jiaming Cui, Naren Ramakrishnan, Bijaya Adhikari, B. Aditya Prakash. 2023. Epidemic Forecasting with a Data-Centric Lens. In Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37.
+- Alexander Rodríguez, Jiaming Cui, Naren Ramakrishnan, Bijaya Adhikari, B. Aditya Prakash. 2023. EINNs: Epidemiologically-informed Neural Networks. In Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37.
 
 ```
 @inproceedings{rodriguez2022einns,
