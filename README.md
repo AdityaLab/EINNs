@@ -1,12 +1,12 @@
-# EINNs: Epidemiologically-Informed Neural Networks
+# [AAAI-23] EINNs: Epidemiologically-Informed Neural Networks
 
-## Pre-print paper
+## Publication
 
-Implementation of the paper "EINNs: Epidemiologically-Informed Neural Networks."
+Implementation of the paper "EINNs: Epidemiologically-Informed Neural Networks" published in AAAI 2023.
 
 Authors: Alexander Rodríguez, Jiaming Cui, Naren Ramakrishnan, Bijaya Adhikari, B. Aditya Prakash
 
-Pre-print: [https://arxiv.org/abs/2202.10446](https://arxiv.org/abs/2202.10446)
+Paper + appendix: [https://arxiv.org/abs/2202.10446](https://arxiv.org/abs/2202.10446)
 
 ## Requirements
 
@@ -32,4 +32,15 @@ You can set up your own model hyperparameter values (e.g. learning rate, loss we
 
 If you have any questions about the code, please contact Alexander Rodriguez at arodriguezc[at]gatech[dot]edu and/or B. Aditya Prakash badityap[at]cc[dot]gatech[dot]edu 
 
+## Cite our work
+If you find our work useful, please cite our work:
+- Alexander Rodríguez, Jiaming Cui, Naren Ramakrishnan, Bijaya Adhikari, B. Aditya Prakash. 2023. Epidemic Forecasting with a Data-Centric Lens. In Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 37.
 
+```
+@inproceedings{rodriguez2022einns,
+  title={EINNs: Epidemiologically-Informed Neural Networks},
+  author={Rodr'\iguez, Alexander and Cui, Jiaming and Ramakrishnan, Naren and Adhikari, Bijaya and Prakash, B. Aditya},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={37},
+  year={2023}
+}
